@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    long long int t;
+    scanf("%lld",&t);
+    while(t--){
+        long long int  n,sum=0;
+        scanf("%lld",&n);
+        long long int temp=n;
+        while(n>9){
+            long long int s=n/10;
+            n=(n%10)+s;
+            sum+=s;
+        }
+        long long int  k=temp+sum;printf("%lld\n",k);
+        
+    }
+
+    return 0;
+}
