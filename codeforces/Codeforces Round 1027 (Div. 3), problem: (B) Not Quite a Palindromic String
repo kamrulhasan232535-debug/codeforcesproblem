@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);
+
+    while (t--) {
+        int n, k;
+        char s[200005];
+        scanf("%d %d", &n, &k);
+        scanf("%s", s);
+
+        int count0 = 0, count1 = 0;
+        for (int i = 0; i < n; i++) {
+            if (s[i] == '0') count0++;
+            else count1++;
+        }
+
+        int t = n / 2;
+        int g = k;
+        int b = t - k;
+
+        int ok = 0;
+        for (int x = 0; x <= g; x++) {
+            int y = g - x; 
+            int need0 = 2 * x + b;
+            int need1 = 2 * y + b;
+            if (need0 <= count0 && need1 <= count1) {
+                ok = 1;
+                break;
+            }
+        }
+
+        if (ok) printf("YES\n");
+        else printf("NO\n");
+    }
+
+    return 0;
+}
