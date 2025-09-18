@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main() {
+	int n,a,b,c,d,t;
+	scanf("%d",&n);
+	c=((n-2)%3==0)?n-3:n-2;
+	b=((n-2)==c)?(n-(c+1)):(n-(c+2));
+	a=(n-(b+c));
+	printf("%d %d %d",a,b,c);
+}
