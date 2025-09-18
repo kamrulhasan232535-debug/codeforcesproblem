@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int n,m,c=0;
+    scanf("%d %d",&n,&m);
+    while(m>n){
+        if(m%2==0){
+            m/=2; 
+        }else{
+            m++;   
+        }
+        c++;
+    }
+    c+=(n-m);
+    printf("%d\n",c);
+    return 0;
+}
