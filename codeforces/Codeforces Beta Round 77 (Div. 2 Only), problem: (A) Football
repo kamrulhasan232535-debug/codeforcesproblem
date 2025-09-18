@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[101]; 
+    scanf("%s", str);
+
+    if (strstr(str, "0000000") || strstr(str, "1111111")) {
+        printf("YES\n");
+    } else {
+        printf("NO\n");
+    }
+
+    return 0;
+}
