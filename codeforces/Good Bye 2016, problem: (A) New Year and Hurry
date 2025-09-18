@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int n, k;
+    scanf("%d %d", &n, &k);
+    
+    int tmlft = 240 - k;
+    int prblmslvd = 0;
+    
+    for (int i = 1; i <= n; i++) {
+        int tmnd = 5 * i;
+        if (tmlft >= tmnd) {
+            tmlft -= tmnd;
+            prblmslvd++;
+        } else {
+            break;
+        }
+    }
+    
+    printf("%d\n",prblmslvd);
+    return 0;
+}
