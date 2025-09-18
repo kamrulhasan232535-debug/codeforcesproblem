@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+	int t,a;
+	scanf("%d %d",&t,&a);
+	int c=0;
+	while(t<=a){
+	    t*=3;
+	    a*=2;
+	    c++;
+	}printf("%d\n",c);
+
+}
+
