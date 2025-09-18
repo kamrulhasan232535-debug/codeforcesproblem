@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    
+    char prev[3];  
+    scanf("%s", prev);  
+    int groups = 1;  
+    for (int i = 1; i < n; i++) {
+        char current[3];
+        scanf("%s", current); 
+        if (current[0] != prev[0] || current[1] != prev[1]) {
+            groups++;  
+        }
+        
+        prev[0] = current[0];
+        prev[1] = current[1];
+    }
+    
+    printf("%d\n", groups); 
+    
+    return 0;
+}
