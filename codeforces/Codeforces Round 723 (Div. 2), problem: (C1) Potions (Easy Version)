@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define N 2000
+int compare(const void *a, const void *b) {
+    return (*(long long *)a - *(long long *)b);
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    
+    long long arr[N];
+    long long S = 0;
+    long long pq[N];
+    int pqsize = 0;
+    
+    for (int i = 0; i < n; i++) {
+        scanf("%lld", &arr[i]);
+        S += arr[i];
+        
+        pq[pqsize++] = arr[i];  
+        qsort(pq, pqsize, sizeof(long long), compare);
+        while (S < 0) {
+            S -= pq[0];
+            for (int j = 1; j < pqsize; j++) {
+                pq[j - 1] = pq[j];
+            }
+            pqsize--;
+        }
+    }
+    
+    printf("%d\n", pqsize);
+    
+    return 0;
+}
