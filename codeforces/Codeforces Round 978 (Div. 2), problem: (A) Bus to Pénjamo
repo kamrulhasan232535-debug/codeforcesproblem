@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            int r= sc.nextInt();
+            int[] array=new int[n];
+            int c=0,alone=0;
+            for(int i=0; i<n; i++){
+                array[i]=sc.nextInt();
+                c+=array[i]/2*2;
+                r-=array[i]/2;
+                alone+=array[i]%2;
+            }if(alone>r){
+			    c+=r*2-alone;
+            }
+		    else{
+		 	c+=alone;
+		    }
+            System.out.println(c);
+            
+        }
+
+        sc.close();
+    }
+}
