@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int compare(const void* a, const void* b) {
+    return (*(int*)a - *(int*)b);
+}
+
+void solve() {
+    int n;
+    scanf("%d", &n);
+    int x[n];
+    for (int i = 0; i < n; ++i) {
+        scanf("%d", &x[i]);
+    }
+
+    qsort(x, n, sizeof(int), compare);
+
+    if (x[0] % 2 == x[n - 1] % 2) {
+        printf("0\n");
+        return;
+    }
+
+    int left = n, right = n;
+
+    for (int i = 1; i < n; ++i) {
+        if (x[i] % 2 != x[0] % 2) {
+            left = i;
+            break;
+        }
+    }
+
+    for (int i = 1; i < n; ++i) {
+        if (x[n - i - 1] % 2 != x[n - 1] % 2) {
+            right = i;
+            break;
+        }
+    }
+
+    printf("%d\n", left < right ? left : right);
+}
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+        solve();
+    }
+    return 0;
+}
