@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    char s[5];
+
+    while (t--) {
+        scanf("%s", s);          
+        int n = 0;
+        for (int i = 0; i < 4; i++) {
+            n = n * 10 + (s[i] - '0');  
+        }
+
+        int r = (int)sqrt(n);       
+        if (r * r == n) {
+            printf("0 %d\n", r);   
+        } else {
+            printf("-1\n");
+        }
+    }
+
+    return 0;
+}
