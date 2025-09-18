@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+    int t;
+    scanf("%d",&t);
+    while(t--){
+        long long int r,c,m,n;
+        scanf("%lld %lld %lld %lld",&r,&c,&m,&n);
+        printf("%lld\n",(r-m)*(c-1)+((r*c)-(m-1)*c-n));
+    }
+}
+
