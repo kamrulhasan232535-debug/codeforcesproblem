@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void solve() {
+    int n, m;
+    scanf("%d %d", &n, &m);
+    printf("%d\n", (n > m ? n : m) + 1);
+}
+
+int main() {
+    int t;
+    scanf("%d", &t);
+
+    while (t--) {
+        solve();
+    }
+
+    return 0;
+}
