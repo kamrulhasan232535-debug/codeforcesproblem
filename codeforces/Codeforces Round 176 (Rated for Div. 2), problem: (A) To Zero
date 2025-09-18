@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int t;
+    scanf("%d",&t);
+    int n,k;
+    while(t--){
+        scanf("%d %d",&n,&k);
+        int ans=0;
+        if(n%2==1){
+            n-=k;
+            ans=1;
+        }
+        k=(k%2==0)?k:k-1;
+        ans+=(n%k==0)?n/k:(n+k)/k;
+        printf("%d\n",ans);
+    }
+}
+
