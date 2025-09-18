@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+     long long  n,k;
+     scanf("%lld %lld",&n,&k);
+     long long even,odd;
+     odd=(n%2==0)?n/2:(n/2)+1;
+     even=n-odd;
+     printf("%lld\n",(k<=odd)?(2*k-1):(k-odd)*2);
+}
+
