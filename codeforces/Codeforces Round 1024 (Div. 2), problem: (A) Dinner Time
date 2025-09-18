@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--){
+    	int n,m,p,q;
+    	scanf("%d %d %d %d",&n,&m,&p,&q);
+    	printf("%s\n",(n%p==0 && (n/p)*q!=m)?"NO":"YES");
+	}
+	
+}
+
