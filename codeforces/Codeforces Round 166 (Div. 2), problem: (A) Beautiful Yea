@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int d = n + 1;
+
+    while (1) { 
+        int array2[10] = {0}; 
+        int temp = d, unique = 1;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            if (array2[digit] > 0) { 
+                unique = 0;
+                break;
+            }
+            array2[digit]++;
+            temp /= 10;
+        }
+
+        if (unique) {
+            printf("%d\n", d);
+            break;
+        }
+        d++; 
+    }
+
+    return 0;
+}
