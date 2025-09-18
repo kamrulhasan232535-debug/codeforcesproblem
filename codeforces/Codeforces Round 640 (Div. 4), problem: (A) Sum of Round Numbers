@@ -1,0 +1,26 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main(){
+    int x;
+    scanf("%d",&x);
+    while(x--){
+        int y;
+        scanf("%d",&y);
+        int list[100];
+        int count=0;
+        int multi=1;
+        while(y!=0){
+            int z=y%10;
+            if(z!=0){
+                list[count++]=z*multi;
+            }
+            multi*=10;
+            y=y/10;
+            
+        }printf("%d\n",count);
+        for(int i=0; i<count; i++){
+            printf("%d ",list[i]);
+        }printf("\n");
+    }
+}
