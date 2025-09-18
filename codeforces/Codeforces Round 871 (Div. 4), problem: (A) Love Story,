@@ -1,0 +1,13 @@
+t = int(input())
+for _ in range(t):
+    b =input()
+    a="codeforces"
+    c=0
+    for i in range(10):
+        if a[i]!=b[i]:
+            c+=1
+        else:
+            c+=0
+    print(c)
+
+
