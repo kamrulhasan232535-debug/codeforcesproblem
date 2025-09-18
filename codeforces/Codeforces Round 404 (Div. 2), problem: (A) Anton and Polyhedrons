@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+int main() {
+	int t;
+	scanf("%d",&t);
+	int ans=0;
+	while(t--){
+	    char s[26];
+	    scanf("%s",s);
+	    ans+=((s[0]=='T')?4:(s[0]=='C')?6:(s[0]=='O')?8:(s[0]=='D')?12:(s[0]=='I')?20:0);
+	}printf("%d\n",ans);
+	
+}
+
