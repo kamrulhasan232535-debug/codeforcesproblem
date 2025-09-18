@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class ChessMoves {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline
+
+        while (t-- > 0) {
+            String s = scanner.nextLine();
+            char file = s.charAt(0);
+            char rank = s.charAt(1);
+
+            for (char c = 'a'; c <= 'h'; c++) {
+                if (c != file) {
+                    System.out.print(c + "" + rank + " ");
+                }
+            }
+            
+            for (char c = '1'; c <= '8'; c++) {
+                if (c != rank) {
+                    System.out.print(file + "" + c + " ");
+                }
+            }
+            
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
