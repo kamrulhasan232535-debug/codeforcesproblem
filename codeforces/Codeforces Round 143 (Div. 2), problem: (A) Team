@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    int array[3];
+    int ans = 0;
+    for (int i = 0; i < t; i++) {
+        int c = 0;  
+        for (int j = 0; j < 3; j++) {
+            scanf("%d", &array[j]);
+            c += (array[j] == 1) ? 1 : 0;
+        }
+        ans += (c >= 2) ? 1 : 0;
+    }
+    printf("%d\n", ans);
+    return 0;
+}
