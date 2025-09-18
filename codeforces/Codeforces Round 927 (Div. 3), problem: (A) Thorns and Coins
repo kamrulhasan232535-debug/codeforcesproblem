@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int t = sc.nextInt();
+            sc.nextLine(); 
+            while (t-- > 0) {
+                int n = sc.nextInt();
+                sc.nextLine(); 
+                String k = sc.nextLine();
+
+                int c = 0;
+                for (int i = 1; i < n; i++) {  
+                    if(k.charAt(i)=='@'){
+                        c++;
+                    }else if(i+1 <n && (k.charAt(i)=='*' && k.charAt(i+1)=='*')){
+                        break;
+                    }
+                }
+                System.out.println(c);
+            }
+        }
+    }
+}
