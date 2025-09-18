@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    long long t;
+    scanf("%lld", &t);
+
+    int lucky_count = 0;
+
+    while (t != 0) {
+        int digit = t % 10;
+        if (digit == 4 || digit == 7) {
+            lucky_count++; 
+        }
+        t = t / 10;
+    }
+    printf("%s\n", (lucky_count == 4 || lucky_count == 7) ? "YES" : "NO");
+
+    return 0;
+}
