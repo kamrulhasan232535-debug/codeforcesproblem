@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int t = sc.nextInt();  
+            while (t-- > 0) {
+                int n = sc.nextInt();
+                String a = ""; 
+                outerLoop:
+                for (int i = 0; i < 26; i++) {
+                    for (int j = 0; j < 26; j++) {
+                        for (int k = 0; k < 26; k++) {
+                            if (i + j + k + 3 == n) { 
+                                a = "" + (char) (i + 'a') + (char) (j + 'a') + (char) (k + 'a');
+                                break outerLoop; 
+                            }
+                        }
+                    }
+                }
+                System.out.println(a);
+            }
+        }
+    }
+}
