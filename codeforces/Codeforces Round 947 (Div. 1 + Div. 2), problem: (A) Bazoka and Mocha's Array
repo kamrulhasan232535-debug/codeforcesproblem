@@ -1,0 +1,39 @@
+#include <stdio.h>
+#define N 100010
+
+int a[N];
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+        int n;
+        scanf("%d", &n);
+        for (int i = 1; i <= n; i++) {
+            scanf("%d", &a[i]);
+        }
+        
+        int pos = 0;
+        for (int i = 1; i < n; i++) {
+            if (a[i] > a[i + 1]) {
+                pos = i;
+                break;
+            }
+        }
+        
+        if (!pos) {
+            printf("Yes\n");
+        } else {
+            int fl = 0;
+            for (int i = pos + 1; i <= n; i++) {
+                int j = (i % n) + 1;
+                if (a[i] > a[j]) fl = 1;
+            }
+            if (!fl)
+                printf("Yes\n");
+            else
+                printf("No\n");
+        }
+    }
+    return 0;
+}
