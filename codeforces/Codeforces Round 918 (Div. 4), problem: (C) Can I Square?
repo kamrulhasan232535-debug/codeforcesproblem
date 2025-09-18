@@ -1,0 +1,11 @@
+import math
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    array = list(map(int, input().split()))
+    sum_squares = sum(array)
+    if int(math.sqrt(sum_squares)) ** 2 != sum_squares:
+        print("NO")
+    else:
+        print("YES")
