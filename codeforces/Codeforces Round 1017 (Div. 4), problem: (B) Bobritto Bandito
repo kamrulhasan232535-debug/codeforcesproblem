@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void solve() {
+    long long n, m, l, r;
+    scanf("%lld %lld %lld %lld", &n, &m, &l, &r);
+
+    long long diff = n - m;
+    l = llabs(l);  
+
+    if (l >= diff) {
+        l -= diff;
+        diff = 0;
+    } else {
+        diff -= l;
+        l = 0;
+    }
+
+    printf("%lld %lld\n", -l, r - diff);
+}
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+        solve();
+    }
+    return 0;
+}
