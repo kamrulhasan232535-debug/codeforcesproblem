@@ -1,0 +1,13 @@
+def swap_first_characters(t, test_cases):
+    results = []
+    for case in test_cases:
+        a, b = case
+        new_a = b[0] + a[1:]
+        new_b = a[0] + b[1:]
+        results.append(f"{new_a} {new_b}")
+    return results
+t = int(input().strip())
+test_cases = [input().strip().split() for _ in range(t)]
+results = swap_first_characters(t, test_cases)
+for result in results:
+    print(result)
