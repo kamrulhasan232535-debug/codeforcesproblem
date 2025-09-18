@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+    
+    while (T--) {
+        int n;
+        long long k;
+        scanf("%d %lld", &n, &k);
+
+        long long a[n];
+        for (int i = 0; i < n; i++) {
+            scanf("%lld", &a[i]);
+        }
+
+       
+        long long array[100] = {0};
+        
+        int p = 1;
+      
+        for (int i = 0; i < n; i++) {
+            long long num = a[i];
+            int indx = 0;
+            
+           
+            while (num > 0) {
+                int remainder = num % k;
+                
+                if (remainder > 1) {
+                    p = 0; 
+                    break;
+                }
+
+              
+                if (remainder == 1) {
+                    if (array[indx] > 0) {
+                        p = 0; 
+                        break;
+                    }
+                    array[indx]++;
+                }
+                num /= k;
+                indx++;
+            }
+
+            if (!p) {
+                break;
+            }
+        }
+
+        if (p) {
+            printf("YES\n");
+        } else {
+            printf("NO\n");
+        }
+    }
+
+    return 0;
+}
