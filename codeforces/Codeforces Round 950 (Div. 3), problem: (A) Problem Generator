@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--){
+	    int n,m;
+	    scanf("%d %d",&n,&m);
+	    char a[n];
+	    scanf("%s",a);
+	    int array[7]={0};
+	    for (int i=0; i<n; i++){
+	        array[a[i]-'A']++;
+	    }int c=0;
+	    for(int i=0; i<7; i++){
+	            c+=(array[i]<m)?m-array[i]:0;
+	    }printf("%d\n",c);
+	    
+	}
+}
+
