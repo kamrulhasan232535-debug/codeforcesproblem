@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include<math.h>
+
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--){
+	    int n;
+	    scanf("%d",&n);
+	    int ans=2000000001;
+	    
+	    while (n--){
+	        int a,b;
+	        scanf("%d %d",&a,&b);
+	        ans=fmin(ans,a+(b-1)/2);
+	    }printf("%d\n",ans);
+	}
+	    
+	
+}
+
