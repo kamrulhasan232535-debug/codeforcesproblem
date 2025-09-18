@@ -1,0 +1,13 @@
+t = int(input())
+for _ in range(t):
+    n, k = map(int, input().split())
+    a = list(map(int, input().split()))
+    robin_gold = 0
+    people_given_gold = 0
+    for i in range(n):
+        if a[i] >= k:
+            robin_gold += a[i]
+        elif a[i] == 0 and robin_gold > 0:
+            robin_gold -= 1
+            people_given_gold += 1
+    print(people_given_gold)
