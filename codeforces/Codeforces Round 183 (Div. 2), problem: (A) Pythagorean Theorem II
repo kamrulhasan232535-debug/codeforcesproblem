@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int c = 0;
+        for (int i=1;i<=n;i++) {
+            for (int j=1;j<i;j++) {
+                int aS=i*i-j*j;
+                int a=(int)Math.sqrt(aS);
+                if (a*a==aS && a<=j && a>=1) {
+                    c++;
+                }
+            }
+        }
+        System.out.println(c);
+    }
+}
