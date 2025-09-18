@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int t;
+    scanf("%d",&t);
+    while (t--) {
+        int l, r, L, R;
+        scanf("%d %d %d %d", &l, &r, &L, &R);
+        int inter=(r<R?r:R)-(l>L?l:L)+1;
+        int locked=inter-1;
+        if (inter<=0) {
+            locked=1;
+        } else {
+            locked+=(l!=L);
+            locked+=(r!=R);
+        }
+        printf("%d\n",locked);
+    }
+    return 0;
+}
