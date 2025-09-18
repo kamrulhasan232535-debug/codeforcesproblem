@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        try (Scanner sc = new Scanner(System.in)) {
+            int t = sc.nextInt(); 
+            while (t-- > 0) {
+                int x=sc.nextInt();
+                int y=sc.nextInt();
+                if(y>0 ){
+                int ans=(y+1)/2;
+                ans+=((15*ans-y*4)>=x)?0:(x-(15*ans-y*4)+14)/15;
+                System.out.println(ans);
+                }else{
+                    System.out.println((x%15!=0)?(x+14)/15:x/15);
+                }
+            }
+        }
+    }
+}
