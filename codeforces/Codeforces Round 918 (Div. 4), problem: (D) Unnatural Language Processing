@@ -1,0 +1,35 @@
+#include <stdio.h>
+ 
+int functionvc(char s) {
+    if(s=='a'|| s=='e') {
+        return 0; 
+    }else {
+        return 1;  
+    }
+}
+ 
+int main() {
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+        int l;
+        scanf("%d", &l);
+        char s[l + 1];
+        scanf("%s", s);
+        int i=0;
+        while (i<l) {
+            if (i+2<l && !functionvc(s[i+1]) && functionvc(s[i+2]) &&functionvc(s[i+3]) ) {
+                printf("%c%c%c", s[i], s[i+1],s[i+2]);
+                i+=3;
+            } else {
+                printf("%c%c", s[i], s[i+1]);
+                i+=2;
+            }
+            if (i<l) {
+                printf(".");
+            }
+        }
+        printf("\n"); 
+    }
+    return 0;
+}
