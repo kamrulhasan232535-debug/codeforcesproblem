@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);
+
+    while (t--) {
+        int n;
+        char s[55]; 
+        scanf("%d %s", &n, s);
+
+        int st = 0;
+        int min= 0;
+
+        for (int i = 0; i < n; i++) {
+            if (s[i] == '(') st++;
+            else st--;
+
+            if (st < min)
+                min =st;
+        }
+
+        printf("%d\n", -min);
+    }
+
+    return 0;
+}
