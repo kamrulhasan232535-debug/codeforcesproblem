@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);
+
+    while (t--) {
+        unsigned int x, y, z;
+        scanf("%u %u %u", &x, &y, &z);
+
+       unsigned long long t1 = (x & y & ~z);
+       unsigned long long t2 = (x & z & ~y);
+       unsigned long long t3 = (y & z & ~x);
+       int c = ((t1 | t2 | t3) == 0ULL);
+
+
+        if (c) printf("YES\n");
+        else printf("NO\n");
+    }
+
+    return 0;
+}
